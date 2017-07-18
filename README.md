@@ -35,11 +35,18 @@ A newer version of the Bernard IoT HomeOS built using Devise and other more comm
 
 ## ToDo
 - Add in complete Remote attributes validations in db and model
+- Add in user/admin authentication (CanCanCan configuration)
+- Configure FactoryGirl seeds/test data
+- Add in MQTT support
+- Add in controllers for Alexa Voice Services API
+  - Add in models for skills
+  - Create separate controllers for Custom skill and SmartHome API
 - Finish custom templates for generators
 - Finish custom templates for scaffolds
-- Configure gems:
+- Configure & implement gems:
   - cancancan
   - rubocop
     - populate .rubocop.yml in root directory with additional preferences
   - brakeman
-- Figure out rest of todo's and update this
+- Beautify site
+- Probably more things I forgot
