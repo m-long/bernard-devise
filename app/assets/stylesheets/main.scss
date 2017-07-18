@@ -1,0 +1,49 @@
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+/* universal */
+
+body {
+  padding-top: 60px; // for navbar-fixed
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* typography */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+/* header styles */
+
+/* main body styles */
+
+/* forms */
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+}

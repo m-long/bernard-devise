@@ -1,0 +1,21 @@
+# Configuration for sitewide Rubocop rules
+
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'
+    - 'bin/**/*'
+  TargetRubyVersion: 2.4
+  AllowForAlignment: true
+
+# Allow gemfile to have custom order
+Bundler/OrderedGems:
+  Enabled: false
+
+# Allow spaces inside of brackets
+Layout/SpaceInsideBrackets:
+  Enabled: false
+
+Metrics/LineLength:
+    Max: 90
