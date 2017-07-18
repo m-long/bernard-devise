@@ -10,10 +10,10 @@ A newer version of the Bernard IoT HomeOS built using Devise and other more comm
 
 ### General Gems
 - bootstrap (version 4)
--- sprockets-rails version check
--- jquery-rails
--- autoprefixer-rails
--- font-awesome-rails
+  - sprockets-rails version check
+  - jquery-rails
+  - autoprefixer-rails
+  - font-awesome-rails
 - passenger
 - bcrypt
 - meta-tags (for SEO)
@@ -30,18 +30,16 @@ A newer version of the Bernard IoT HomeOS built using Devise and other more comm
 
 ### Code Cleanliness
 - RuboCop
--- mry (for updating RuboCop)
+  - mry (for updating RuboCop)
 - Brakeman
 
 ## ToDo
-- Modify view scaffolds for updated model attributes in migrations
 - Add in complete Remote attributes validations in db and model
 - Finish custom templates for generators
 - Finish custom templates for scaffolds
 - Configure gems:
--- devise (in progress, need to define user model more thoroughly to finish)
--- cancancan (also needs user and other models well defined)
--- rubocop
---- populate .rubocop.yml in root directory with additional preferences
--- brakeman
+  - cancancan
+  - rubocop
+    - populate .rubocop.yml in root directory with additional preferences
+  - brakeman
 - Figure out rest of todo's and update this
