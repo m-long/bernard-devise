@@ -22,5 +22,9 @@ has_secure_token<% if attribute.name != "token" %> :<%= attribute.name %><% end 
   # Private Methods
   private
 
+    # Validation methods
+    
+    # Other private methods
+
 end
 <% end -%>

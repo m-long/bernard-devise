@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Device Models</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Submitter</th>
+      <th>Brand</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @device_models.each do |device_model| %>
+      <tr>
+        <td><%= device_model.name %></td>
+        <td><%= device_model.submitter.name %></td>
+        <td><%= device_model.brand.name %></td>
+        <td><%= link_to 'Show', device_model %></td>
+        <td><%= link_to 'Edit', edit_device_model_path(device_model) %></td>
+        <td><%= link_to 'Destroy', device_model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Device Model', new_device_model_path %>

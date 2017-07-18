@@ -5,6 +5,15 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   # User routes
-  devise_for :users
-  resources :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+
+  resources :keys
+  resources :remotes
+  resources :devices
+  resources :device_types
+  resources :device_models
+  resources :device_brands
+  resources :locations
 end

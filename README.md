@@ -34,6 +34,8 @@ A newer version of the Bernard IoT HomeOS built using Devise and other more comm
 - Brakeman
 
 ## ToDo
+- Modify view scaffolds for updated model attributes in migrations
+- Add in complete Remote attributes validations in db and model
 - Finish custom templates for generators
 - Finish custom templates for scaffolds
 - Configure gems:

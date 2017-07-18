@@ -30,11 +30,19 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = {
-    host: 'template.mattlong.la',
-    port: 443
-  }
   config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :smtp
+  host = Rails.application.secrets.domain
+  config.action_mailer.default_url_options = { host: host }
+  ActionMailer::Base.smtp_settings = {
+    :address        => Rails.application.secrets.mailgun_smtp_server,
+    :port           => Rails.application.secrets.mailgun_smtp_port,
+    :authentication => :plain,
+    :domain         => Rails.application.secrets.mailgun_domain,
+    :user_name      => Rails.application.secrets.mailgun_smtp_user_name,
+    :password       => Rails.application.secrets.mailgun_smtp_password,
+    :host           => Rails.application.secrets.domain
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

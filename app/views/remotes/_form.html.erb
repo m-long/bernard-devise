@@ -1,0 +1,214 @@
+<%= form_with(model: remote, local: true) do |f| %>
+  <% if remote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(remote.errors.count, "error") %> prohibited this remote from being saved:</h2>
+
+      <ul>
+      <% remote.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :remote_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :model %>
+    <%= f.text_field :model, id: :model %>
+  </div>
+
+  <div class="field">
+    <%= f.label :brand %>
+    <%= f.select :brand_id, 
+    @device_brands.collect { |b| [ b.name, b.id ] }, 
+    { include_blank: false }, { class: 'form-control' } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :device_model_ids, "Device Models Supported", class: 'col-sm-4 control-label' %>
+    <div class="col-sm-8">
+      <div class="container-fluid">
+        <div class="row">
+          <%= f.collection_check_boxes :device_model_ids,
+            @device_models, :id, :name, {}, {} do |c|%>
+            <div class="col-sm-6">
+              <%= 
+                c.label(class: 'checkbox') { 
+                  c.check_box + " #{c.text} (#{c.object.brand.name})" 
+                }
+              %>
+            </div>
+          <% end %> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :supported_devices %>
+    <%= f.text_field :supported_devices, id: :remote_supported_devices %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bits %>
+    <%= f.number_field :bits, id: :remote_bits %>
+  </div>
+
+  <div class="field">
+    <%= f.label :flags %>
+    <%= f.text_field :flags, id: :remote_flags %>
+  </div>
+
+  <div class="field">
+    <%= f.label :include %>
+    <%= f.text_field :include, id: :remote_include %>
+  </div>
+
+  <div class="field">
+    <%= f.label :manual_sort %>
+    <%= f.check_box :manual_sort, id: :remote_manual_sort %>
+  </div>
+
+  <div class="field">
+    <%= f.label :suppress_repeat %>
+    <%= f.number_field :suppress_repeat, id: :remote_suppress_repeat %>
+  </div>
+
+  <div class="field">
+    <%= f.label :driver %>
+    <%= f.text_field :driver, id: :remote_driver %>
+  </div>
+
+  <div class="field">
+    <%= f.label :eps %>
+    <%= f.number_field :eps, id: :remote_eps %>
+  </div>
+
+  <div class="field">
+    <%= f.label :aeps %>
+    <%= f.number_field :aeps, id: :remote_aeps %>
+  </div>
+
+  <div class="field">
+    <%= f.label :header %>
+    <%= f.text_field :header, id: :remote_header %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zero %>
+    <%= f.text_field :zero, id: :remote_zero %>
+  </div>
+
+  <div class="field">
+    <%= f.label :one %>
+    <%= f.text_field :one, id: :remote_one %>
+  </div>
+
+  <div class="field">
+    <%= f.label :two %>
+    <%= f.text_field :two, id: :remote_two %>
+  </div>
+
+  <div class="field">
+    <%= f.label :three %>
+    <%= f.text_field :three, id: :remote_three %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ptrail %>
+    <%= f.number_field :ptrail, id: :remote_ptrail %>
+  </div>
+
+  <div class="field">
+    <%= f.label :plead %>
+    <%= f.number_field :plead, id: :remote_plead %>
+  </div>
+
+  <div class="field">
+    <%= f.label :foot %>
+    <%= f.text_field :foot, id: :remote_foot %>
+  </div>
+
+  <div class="field">
+    <%= f.label :repeat %>
+    <%= f.text_field :repeat, id: :remote_repeat %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pre_data_bits %>
+    <%= f.number_field :pre_data_bits, id: :remote_pre_data_bits %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pre_data %>
+    <%= f.text_field :pre_data, id: :remote_pre_data %>
+  </div>
+
+  <div class="field">
+    <%= f.label :post_data_bits %>
+    <%= f.number_field :post_data_bits, id: :remote_post_data_bits %>
+  </div>
+
+  <div class="field">
+    <%= f.label :post_data %>
+    <%= f.text_field :post_data, id: :remote_post_data %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pre %>
+    <%= f.text_field :pre, id: :remote_pre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :post %>
+    <%= f.text_field :post, id: :remote_post %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gap %>
+    <%= f.number_field :gap, id: :remote_gap %>
+  </div>
+
+  <div class="field">
+    <%= f.label :repeat_gap %>
+    <%= f.number_field :repeat_gap, id: :remote_repeat_gap %>
+  </div>
+
+  <div class="field">
+    <%= f.label :min_repeat %>
+    <%= f.number_field :min_repeat, id: :remote_min_repeat %>
+  </div>
+
+  <div class="field">
+    <%= f.label :toggle_bit %>
+    <%= f.number_field :toggle_bit, id: :remote_toggle_bit %>
+  </div>
+
+  <div class="field">
+    <%= f.label :toggle_bit_mask %>
+    <%= f.text_field :toggle_bit_mask, id: :remote_toggle_bit_mask %>
+  </div>
+
+  <div class="field">
+    <%= f.label :repeat_mask %>
+    <%= f.text_field :repeat_mask, id: :remote_repeat_mask %>
+  </div>
+
+  <div class="field">
+    <%= f.label :frequency %>
+    <%= f.number_field :frequency, id: :remote_frequency %>
+  </div>
+
+  <div class="field">
+    <%= f.label :duty_cycle %>
+    <%= f.number_field :duty_cycle, id: :remote_duty_cycle %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

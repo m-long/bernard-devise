@@ -1,0 +1,39 @@
+FactoryGirl.define do
+  factory :remote do
+    name "MyString"
+    brand "MyString"
+    model "MyString"
+    supported_devices "MyString"
+    bits 1
+    flags "MyString"
+    include "MyString"
+    manual_sort false
+    suppress_repeat 1
+    driver "MyString"
+    eps 1
+    aeps 1
+    header "MyString"
+    zero "MyString"
+    one "MyString"
+    two "MyString"
+    three "MyString"
+    ptrail 1
+    plead 1
+    foot "MyString"
+    repeat "MyString"
+    pre_data_bits 1
+    pre_data "MyString"
+    post_data_bits 1
+    post_data "MyString"
+    pre "MyString"
+    post "MyString"
+    gap 1
+    repeat_gap 1
+    min_repeat 1
+    toggle_bit 1
+    toggle_bit_mask "MyString"
+    repeat_mask "MyString"
+    frequency 1
+    duty_cycle 1
+  end
+end

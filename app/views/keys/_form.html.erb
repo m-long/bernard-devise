@@ -1,0 +1,34 @@
+<%= form_with(model: key, local: true) do |f| %>
+  <% if key.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(key.errors.count, "error") %> prohibited this key from being saved:</h2>
+
+      <ul>
+      <% key.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :key_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :value %>
+    <%= f.text_field :value, id: :key_value %>
+  </div>
+
+  <div class="field">
+    <%= f.label :remote_id %>
+    <%= f.select :remote_id, 
+    @remotes.collect { |l| [ l.name, l.id ] }, 
+    { include_blank: false }, { class: 'form-control' } %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+json.extract! remote, :id, :name, :brand, :model, :supported_devices, :bits, :flags, :include, :manual_sort, :suppress_repeat, :driver, :eps, :aeps, :header, :zero, :one, :two, :three, :ptrail, :plead, :foot, :repeat, :pre_data_bits, :pre_data, :post_data_bits, :post_data, :pre, :post, :gap, :repeat_gap, :min_repeat, :toggle_bit, :toggle_bit_mask, :repeat_mask, :frequency, :duty_cycle, :created_at, :updated_at
+json.url remote_url(remote, format: :json)

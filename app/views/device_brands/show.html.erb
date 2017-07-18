@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @device_brand.name %>
+</p>
+
+<p>
+  <strong>Submitter:</strong>
+  <%= @device_brand.submitter.name %>
+</p>
+
+<%= link_to 'Edit', edit_device_brand_path(@device_brand) %> |
+<%= link_to 'Back', device_brands_path %>

@@ -5,6 +5,24 @@ class User < ApplicationRecord
          :confirmable, :lockable, :timeoutable #, :omniauthable
 
   # Associations
+  has_many :locations, dependent: :destroy
+  has_many :devices, through: :locations, dependent: :destroy
+  has_many :submitted_device_brands,
+             class_name: 'DeviceBrand',
+             foreign_key: 'submitter_id',
+             inverse_of: :submitter
+  has_many :submitted_device_models,
+             class_name: 'DeviceModel',
+             foreign_key: 'submitter_id',
+             inverse_of: :submitter
+  has_many :submitted_device_types,
+             class_name: 'DeviceType',
+             foreign_key: 'submitter_id',
+             inverse_of: :submitter
+  has_many :submitted_remotes,
+             class_name: 'Remote',
+             foreign_key: 'submitter_id',
+             inverse_of: :submitter
 
   # Validations
   ## Name validations
@@ -18,8 +36,6 @@ class User < ApplicationRecord
               length: { in: 2..50 },
               presence: true
   ## Email validations
-  ### Ensure emails in db are lowercase
-  before_save :format_email
   ### For emails to have relatively adequate formatting
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email,
@@ -31,17 +47,15 @@ class User < ApplicationRecord
   # Custom Validations
 
   # Custom Methods
-  def full_name
+  def name
     "#{first_name} #{last_name}"
   end
 
   # Private Methods
   private
 
-  ## Converts email to lowercase for before save
-  ## Also done with Devise but ensures done in model
-  def format_email
-    email.downcase!.strip!
-  end
+    # Validation methods
+    
+    # Other private methods
 
 end
