@@ -48,5 +48,7 @@ A newer version of the Bernard IoT HomeOS built using Devise and other more comm
   - rubocop
     - populate .rubocop.yml in root directory with additional preferences
   - brakeman
+- Tests, tests, tests, tests, tests!
+  - So far been the opposite of TDD, need to rectify that and then some
 - Beautify site
 - Probably more things I forgot
