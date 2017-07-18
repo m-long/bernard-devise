@@ -1,11 +1,10 @@
-# Rails Application Templte
+# Bernard 2.0, built on Devise
 - By Matt Long
 
 
 ## Overview
 
-An application framework for projects moving forward, using commons gems rather than a custom user authentication system. If you have any suggestions for improvement, feel free to contact me at m@mattlong.la
-
+A newer version of the Bernard IoT HomeOS built using Devise and other more common gems for streamlining user management and other processes. This will also look into combing the Alexa custom skills and the Alexa SmartHome API into one app for smoother integration into the home, as well as looking at add in Google Home Support
 
 ## Included gems
 
@@ -36,9 +35,10 @@ An application framework for projects moving forward, using commons gems rather 
 
 ## ToDo
 - Finish custom templates for generators
+- Finish custom templates for scaffolds
 - Configure gems:
--- devise (in progress, need to define user model to finish)
--- cancancan (also needs user and other models defined)
+-- devise (in progress, need to define user model more thoroughly to finish)
+-- cancancan (also needs user and other models well defined)
 -- rubocop
 --- populate .rubocop.yml in root directory with additional preferences
 -- brakeman
